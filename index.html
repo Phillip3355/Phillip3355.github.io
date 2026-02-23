@@ -1,11 +1,56 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="ko">
 <head>
-  <title>My Minecraft Server</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Stime Networks</title>
+  <style>
+    .container{max-width:900px;margin:20px auto;font-family:Arial, Helvetica, sans-serif;padding:0 16px}
+    img.responsive{max-width:100%;height:auto;display:block;margin-bottom:12px;border:1px solid #ddd;padding:4px}
+    .caption{font-size:0.95rem;color:#444;margin-bottom:18px}
+    header p{margin:4px 0}
+  </style>
 </head>
 <body>
-  <h1>🔥 Nugget SMP 🔥</h1>
-  <p>서버 주소: play.nuggetsmp.com</p>
-  <p>디스코드: https://discord.gg/xxxxx</p>
+  <div class="container">
+    <header>
+      <h1>Stime Networks</h1>
+      <p>서버 주소: play.nuggetsmp.com</p>
+      <p>디스코드: https://discord.gg/xxxxx</p>
+    </header>
+
+    <section>
+      <h2>이미지 삽입 예제</h2>
+      <p class="caption">다음 예제를 `stime.html`에 그대로 넣거나, 각 이미지를 실제 파일/경로로 교체하세요.</p>
+
+      <h3>1) 로컬 이미지 (같은 폴더)</h3>
+      <p class="caption">`image.jpg`를 `stime.html`과 같은 폴더에 두세요.</p>
+      <img src="image.jpg" alt="로컬 예제 이미지" width="600" height="400" class="responsive">
+
+      <h3>2) 서브폴더</h3>
+      <p class="caption">`images/photo.jpg`와 같이 서브폴더를 사용합니다.</p>
+      <img src="images/photo.jpg" alt="서브폴더 이미지" width="600" height="400" class="responsive">
+
+      <h3>3) 외부 URL (예제 이미지)</h3>
+      <p class="caption">웹에 있는 이미지를 바로 불러옵니다.</p>
+      <img src="https://via.placeholder.com/800x450.png?text=Stime+Example" alt="외부 예제 이미지" class="responsive" loading="lazy" width="800" height="450">
+
+      <h3>4) 데이터 URI (작은 아이콘)</h3>
+      <p class="caption">작은 SVG 아이콘을 인라인으로 넣는 예시입니다.</p>
+      <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='160'><rect width='100%' height='100%' fill='%23f3f3f3'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23666' font-size='20'>STIME</text></svg>" alt="데이터 URI 아이콘" class="responsive">
+
+      <h3>접근성 & 성능 팁</h3>
+      <ul>
+        <li>의미 있는 <strong>alt</strong> 텍스트를 제공하세요. 장식용이면 <strong>alt=""</strong> 사용.</li>
+        <li>레이아웃 안정화를 위해 <strong>width</strong>와 <strong>height</strong> 속성을 지정하세요.</li>
+        <li>지연 로딩은 <strong>loading="lazy"</strong>로 성능 개선.</li>
+        <li>반응형 이미지는 CSS에서 <strong>max-width:100%; height:auto;</strong> 적용.</li>
+      </ul>
+    </section>
+
+    <footer style="margin-top:28px;color:#666;font-size:0.9rem">
+      <p>원하시면 다른 이미지로 바꿔드리거나, 파일 업로드 방법을 도와드릴게요.</p>
+    </footer>
+  </div>
 </body>
 </html>

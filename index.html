@@ -3,57 +3,337 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Stime Networks</title>
+  <title>Stime Networks - 마인크래프트 멀티플레이</title>
   <style>
-    .container{max-width:900px;margin:20px auto;font-family:Arial, Helvetica, sans-serif;padding:0 16px}
-    img.responsive{max-width:100%;height:auto;display:block;margin-bottom:12px;border:1px solid #ddd;padding:4px}
-    .caption{font-size:0.95rem;color:#444;margin-bottom:18px}
-    header p{margin:4px 0}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #ffffff;
+      color: #1a1a1a;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px 16px;
+    }
+    
+    /* 헤더 */
+    header {
+      text-align: center;
+      padding: 30px 20px;
+      background: #000000;
+      color: white;
+      margin-bottom: 20px;
+      border-radius: 0px;
+    }
+    
+    header h1 {
+      font-size: 2.2rem;
+      color: white;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    
+    header p {
+      margin: 6px 0;
+      font-size: 1rem;
+      color: #d0d0d0;
+      font-weight: 300;
+    }
+    
+    img.responsive {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 20px 0 15px 0;
+      border: 1px solid #ddd;
+      padding: 0;
+      border-radius: 0px;
+      box-shadow: none;
+      transition: opacity 0.3s ease;
+    }
+    
+    img.responsive:hover {
+      opacity: 0.9;
+    }
+    
+    section {
+      margin-bottom: 20px;
+      background: white;
+      padding: 0px;
+      border-radius: 0px;
+      border-left: none;
+      border-top: 2px solid #000000;
+      border-bottom: none;
+    }
+    
+    h3 {
+      font-size: 1.6rem;
+      color: #000000;
+      margin: 18px 0 12px 0;
+      font-weight: 700;
+    }
+    
+    h4 {
+      font-size: 1.1rem;
+      color: #1a1a1a;
+      margin: 12px 0 10px 0;
+      font-weight: 600;
+    }
+    
+    ul {
+      list-style: none;
+      margin: 12px 0 18px 0;
+    }
+    
+    li {
+      padding: 6px 0 6px 20px;
+      position: relative;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+      color: #333;
+    }
+    
+    li:before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #000000;
+      font-weight: bold;
+    }
+    
+    strong {
+      color: #000000;
+      font-weight: 700;
+    }
+    
+    p {
+      font-size: 0.95rem;
+      color: #333;
+      margin: 10px 0;
+    }
+    
+    a {
+      color: #000000;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border-bottom: 1px solid #000000;
+    }
+    
+    a:hover {
+      color: #666;
+      border-bottom-color: #666;
+    }
+    
+    /* 커뮤니티 링크 섹션 */
+    .community-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin: 16px 0;
+    }
+    
+    .link-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #000000;
+      color: white;
+      text-decoration: none;
+      border-radius: 0px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      box-shadow: none;
+      cursor: pointer;
+      border: none;
+      font-size: 0.95rem;
+    }
+    
+    .link-btn:hover {
+      transform: none;
+      box-shadow: none;
+      background: #333333;
+    }
+    
+    .link-btn.discord {
+      background: #000000;
+    }
+    
+    .link-btn.discord:hover {
+      background: #333333;
+    }
+    
+    /* 서버 정보 카드 */
+    .server-card {
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      padding: 16px;
+      margin: 15px 0;
+      border-radius: 0px;
+      transition: all 0.2s ease;
+    }
+    
+    .server-card:hover {
+      background: #f5f5f5;
+      box-shadow: none;
+    }
+    
+    .server-card.raiding {
+      border-color: #ddd;
+      background: #f9f9f9;
+    }
+    
+    .server-card.raiding:hover {
+      background: #f5f5f5;
+      box-shadow: none;
+    }
+    
+    /* 푸터 */
+    footer {
+      margin-top: 30px;
+      padding: 20px;
+      text-align: center;
+      border-top: 2px solid #000000;
+      background: white;
+      border-radius: 0px;
+      color: #666;
+      font-size: 0.9rem;
+    }
+    
+    footer p {
+      margin: 6px 0;
+    }
+    
+    /* 반응형 디자인 */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.6rem;
+      }
+      
+      header p {
+        font-size: 0.9rem;
+      }
+      
+      h3 {
+        font-size: 1.4rem;
+      }
+      
+      h4 {
+        font-size: 1rem;
+      }
+      
+      li {
+        padding: 6px 0 6px 18px;
+        font-size: 0.9rem;
+      }
+      
+      section {
+        padding: 0px;
+      }
+      
+      .community-links {
+        flex-direction: column;
+      }
+      
+      .link-btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .container {
+        padding: 10px;
+      }
+      
+      header {
+        padding: 20px 15px;
+        margin-bottom: 15px;
+      }
+      
+      header h1 {
+        font-size: 1.3rem;
+      }
+      
+      h3 {
+        font-size: 1.2rem;
+      }
+      
+      section {
+        padding: 0px;
+        margin-bottom: 15px;
+      }
+      
+      li {
+        padding: 5px 0 5px 16px;
+        font-size: 0.85rem;
+      }
+
+      img.responsive {
+        margin: 15px 0 12px 0;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="container">
+    <header>
+      <h1>⛏ Stime Networks</h1>
+      <p>마인크래프트 멀티플레이 서버</p>
+      <p>Minecraft Multiplayer Server</p>
+    </header>
     <section>
-      <img src="mainlogo.jpg" alt="로컬 예제 이미지" width="600" height="400" class="responsive">
-      <h3>Welcome to Stime Networks | Stime Networks에 오신것을 환영합니다.</h3>
+      <img src="mainlogo.jpg" alt="Stime Networks 로고" width="600" height="400" class="responsive">
+      <h3>🎮 Stime Networks에 오신것을 환영합니다</h3>
+      <p style="margin-bottom: 20px; font-size: 1.05rem; color: #b0b0b0;">Welcome to Stime Networks</p>
       <ul>
-        <li>다양한 사람들과 즐기는 <strong>멀티서버</strong></li>
-        <li><strong>Multi-server</strong> to enjoy with various people</li>
-        <h1></h1>
+        <li>다양한 사람들과 즐기는 <strong>멀티플레이</strong></li>
         <li><strong>Minecraft 공식 렐름</strong>으로 신뢰도 높은 서버 안정성</li>
-        <li>Highly reliable server stability with <strong>the official Minecraft Realm</strong></li>
-        <h1></h1>
         <li><strong>무한한 상상력</strong>의 세계를 보장</li>
-        <li>Guaranteeing <strong>a world of limitless imagination</strong></li>
-        <h1></h1>
-      </ul>
-
-      <img src="img1.jpg" alt="로컬 예제 이미지" width="600" height="400" class="responsive">
-      <h3>How can I join sever? | 어떻게 서버에 참여할 수 있나요?</h3>
-      <h4>Join community and get started! | 커뮤니티에 참여하고 시작하세요!</h4>
-      <ul>
-        <li><strong>Discord(Global)</strong> : https://discord.gg/BKAEEENn</li>
-        <li><strong>KakaoTalk(Korea)</strong> : https://open.kakao.com/o/gHrzH5hi</li>
       </ul>
     </section>
 
-      <img src="img2.jpg" alt="로컬 예제 이미지" width="600" height="400" class="responsive">
-      <h3>Sever Information | 서버 정보</h3>
-      <h4>클래식 서버 | Classic Sever</h4>
-      <ul>
-        <h4><strong>서버 주소 | Sever Adress</strong> : 레전드 서버 주소</h4>
-        <li>간단한 규칙으로 다른 사람들과 플레이하세요! | Multiplay with others using simple rules!</li>
-      </ul>
-      <h4>약탈 서버 | Raiding Sever
-      </h4>
-      <ul>
-        <h4><strong>서버 주소 | Sever Adress</strong> : 레전드 서버 주소</h4>
-        <li>규칙없이 약탈하고 전투하세요. | Loot and fight without rules.</li>
-      </ul>
+    <section>
+      <img src="img1.jpg" alt="커뮤니티" width="600" height="400" class="responsive">
+      <h3>🚀 커뮤니티에 참여하세요</h3>
+      <h4>Join our community and get started!</h4>
+      <p style="margin-bottom: 20px; color: #b0b0b0;">커뮤니티에 참여하고 지금 바로 시작하세요!</p>
+      <div class="community-links">
+        <a href="https://discord.gg/BKAEEENn" class="link-btn discord" target="_blank">💬 Discord (Global)</a>
+        <a href="https://open.kakao.com/o/gHrzH5hi" class="link-btn" target="_blank">💭 KakaoTalk (Korea)</a>
+      </div>
     </section>
 
-    <footer style="margin-top:28px;color:#666;font-size:0.9rem">
-      <p>여기에 뭘 쓸까요.</p>
+    <section>
+      <img src="img2.jpg" alt="서버 정보" width="600" height="400" class="responsive">
+      <h3>🏠 서버 정보 | Server Information</h3>
+      
+      <div class="server-card">
+        <h4>⚔️ 클래식 서버 (Classic Server)</h4>
+        <p><strong>서버 주소 | Server Address:</strong> <span style="color: #ffcc00;">서버주소 준비중</span></p>
+        <p>간단한 규칙으로 다른 사람들과 협력하며 플레이하세요!</p>
+        <p>Multiplay cooperatively with others using simple rules!</p>
+      </div>
+      
+      <div class="server-card raiding">
+        <h4>🔥 약탈 서버 (Raiding Server)</h4>
+        <p><strong>서버 주소 | Server Address:</strong> <span style="color: #ffcc00;">서버주소 준비중</span></p>
+        <p>규칙없이 약탈하고 전투하세요. 스릴 넘치는 경험을 기다리세요!</p>
+        <p>Loot and fight without rules. Experience unforgettable battles!</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 Stime Networks. All rights reserved.</p>
+      <p>마인크래프트 멀티플레이 서버 | Minecraft Multiplayer Networks</p>
     </footer>
   </div>
 </body>
